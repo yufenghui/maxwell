@@ -1,7 +1,7 @@
 package com.zendesk.maxwell.schema.columndef;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.zendesk.maxwell.producer.MaxwellOutputConfig;
 import com.zendesk.maxwell.util.DynamicEnum;
 
@@ -83,9 +83,28 @@ public abstract class ColumnDef implements Cloneable {
 			return new DecimalColumnDef(name, type, pos);
 		case "date":
 			return new DateColumnDef(name, type, pos);
+
+			/**
+			 * by jepson
+			 5.1 Copy DateTimeColumnDef.java and DateFormatter.java files, change to TimeStampColumnDef.java and TimeStampFormatter.
+
+			 5.2 ColumnDef.java
+			 [original]:
+
+			 case "datetime":
+			 case "timestamp":
+			 return new DateTimeColumnDef(name, type, pos, columnLength);
+			 [current]:
+			 case "datetime":
+			 return new DateTimeColumnDef(name, type, pos, columnLength);
+			 case "timestamp":
+			 return new TimeStampColumnDef(name, type, pos, columnLength);
+
+			 */
 		case "datetime":
-		case "timestamp":
 			return new DateTimeColumnDef(name, type, pos, columnLength);
+		case "timestamp":
+			return new TimeStampColumnDef(name, type, pos, columnLength);
 		case "time":			
 			return new TimeColumnDef(name, type, pos, columnLength);
 		case "year":
