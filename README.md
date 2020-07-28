@@ -1,3 +1,5 @@
+## Maxwell
+
 <div id="maxwell-header">
 </div>
 
@@ -8,10 +10,17 @@ Its common use cases include ETL, cache building/expiring, metrics collection,
 search indexing and inter-service communication.  Maxwell gives you some of the
 benefits of event sourcing without having to re-architect your entire platform.
 
-<b>Download:</b><br>
+#### 修改说明
+
+- 增加日期时区内置处理，包含timestamp 和 datetime 类型
+- 修改Dockerfile部分内容
+- 新增功能提交到v1.27.1版本，同时同步到master分支
+
+#### Download
 [https://github.com/zendesk/maxwell/releases/download/v1.27.0/maxwell-1.27.0.tar.gz](https://github.com/zendesk/maxwell/releases/download/v1.27.0/maxwell-1.27.0.tar.gz)
-<br/>
-<b>Source:</b><br>
+
+
+#### Source
 [https://github.com/zendesk/maxwell](https://github.com/zendesk/maxwell)
 <br clear="all">
 
