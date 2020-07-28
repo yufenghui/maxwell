@@ -10,7 +10,23 @@ Its common use cases include ETL, cache building/expiring, metrics collection,
 search indexing and inter-service communication.  Maxwell gives you some of the
 benefits of event sourcing without having to re-architect your entire platform.
 
-#### 修改说明
+### 数据库配置
+
+- my.cnf
+```shell script
+[mysqld]
+server_id=1
+log-bin=master
+binlog_format=row
+```
+- 用户
+```shell script
+CREATE USER 'maxwell'@'%' IDENTIFIED BY 'maxwell';
+GRANT ALL ON maxwell.* TO 'maxwell'@'%';
+GRANT SELECT, REPLICATION CLIENT, REPLICATION SLAVE ON *.* TO 'maxwell'@'%';
+```
+
+### 修改说明
 
 - 增加日期时区内置处理，包含timestamp 和 datetime 类型
 - 修改Dockerfile部分内容
