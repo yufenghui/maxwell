@@ -30,7 +30,7 @@ GRANT SELECT, REPLICATION CLIENT, REPLICATION SLAVE ON *.* TO 'maxwell'@'%';
 
 - 增加日期时区内置处理，包含timestamp 和 datetime 类型
 - 修改Dockerfile部分内容
-- 新增功能提交到v1.27.1版本，同时同步到master分支
+- 新增功能提交到 `1.27.0_feature_date-timezone` 分支，方便未来与上游版本合并
 
 #### Download
 [https://github.com/zendesk/maxwell/releases/download/v1.27.0/maxwell-1.27.0.tar.gz](https://github.com/zendesk/maxwell/releases/download/v1.27.0/maxwell-1.27.0.tar.gz)

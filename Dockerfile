@@ -8,6 +8,7 @@ RUN mkdir /app \
 
 COPY ./target/maxwell-1.27.0/maxwell-1.27.0 /app
 
+# 解决Windows中编辑的脚本到Linux上回车换行报错的问题
 RUN sed -i "s/\r//" /app/bin/maxwell
 RUN sed -i "s/\r//" /app/bin/maxwell-benchmark
 RUN sed -i "s/\r//" /app/bin/maxwell-bootstrap
